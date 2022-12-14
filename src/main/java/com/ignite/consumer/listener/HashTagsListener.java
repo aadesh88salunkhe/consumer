@@ -27,7 +27,7 @@ public class HashTagsListener {
     @Autowired
     HashtagTweetsService hashtagTweetsService;
 
-    @KafkaListener(topics = "${topic.name.hashtaglabel}", groupId = "2")
+    @KafkaListener(topics = "${topic.name.hashtaglabel}", groupId = "hashTagLabelGroup")
     public void consumeHashTagAndLabel(ConsumerRecord<String, String> payload) {
         List<HashTag> list;
         try {
@@ -42,7 +42,7 @@ public class HashTagsListener {
         }
     }
 
-    @KafkaListener(topics = "${topic.name.hashtagtweets}", groupId = "2")
+    @KafkaListener(topics = "${topic.name.hashtagtweets}", groupId = "hashTagTweetsGroup")
     public void consumeHashTagAndTweets(ConsumerRecord<String, String> payload){
         List<HashTagTweet> list;
         try {
