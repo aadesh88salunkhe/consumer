@@ -1,5 +1,3 @@
-# consumer
-
 # Getting Started
 
 Start consumer service after producer service to push data into db
